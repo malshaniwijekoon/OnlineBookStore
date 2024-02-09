@@ -22,7 +22,7 @@ public class CallAPiController {
 
     @GetMapping("/get-all-employee")
     @ResponseBody
-    public Iterable<Employee> callApi(){
+    public Iterable<Employee> callApiGetAllEmployee(){
         String url = otherApiBaseUrl+"/api/employee/get-all-employees";
 
         HttpHeaders headers = new HttpHeaders();
@@ -34,7 +34,7 @@ public class CallAPiController {
 
     @GetMapping("/get-employee")
     @ResponseBody
-    public List<Employee> callApiCompanyDetails(@RequestParam int id){
+    public List<Employee> callApiGetEmployeeById(@RequestParam int id){
         String url = otherApiBaseUrl+"/api/employee/get-employee?id="+id;
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
